@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KMeans Clustering</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>KMeans Clustering Visualization</h1>
+    <div class="all">
+        <div id="plot">
+            <img id="visualization" style="display:none;">
+            <div id="plotly-div" style="display:none;"></div>
+        </div>
+        <div>
+            <label class="label-input">Number of clusters (k): </label>
+            <input type="number" id="numClusters">
+        </div>
+        <div class="dropdown">
+            <select class="form" id="method">
+                <option value="rand">Random!!</option>
+                <option value="far">Farthest First!!</option>
+                <option value="kmeanspp">KMeans++!!</option>
+                <option value="Manual">Manual!!!</option>
+            </select>
+        </div>
+        <div class="runOptions">
+            <button id ="stepThrough" onclick="stepThrough()">Step Through KMeans</button>
+            <button id="runToConvergence" onclick="runToConvergence()">Run to Convergence</button>
+            <button id="generateNewDataset" >Generate New Dataset</button>
+            <button id="resetAlgorithm" onclick="resetAlgorithm()">Reset Algorithm</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</body>
+</html>
